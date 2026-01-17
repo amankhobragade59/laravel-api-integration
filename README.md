@@ -1,192 +1,59 @@
-# laravel-api-integration
-# Laravel JSONPlaceholder Dashboard
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-## 1. Setup Instructions
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-### Prerequisites
-* PHP >= 8.1
-* Composer
-* Laravel 10+
+## About Laravel
 
-### Steps
-```bash
-# Install PHP dependencies
-composer install
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-# Create environment file
-cp .env.example .env
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-# Generate app key
-php artisan key:generate
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-# Set cache & session drivers (no database required)
-CACHE_DRIVER=file
-SESSION_DRIVER=file
+## Learning Laravel
 
-# Start server
-php artisan serve
-```
-Application will be available at: `http://127.0.0.1:8000`
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
 
----
-## 2. API Documentation
-## 2.1 Sample API Responses (JSON)
-### Posts – `/posts/fetch?page=1`
-```json
-{
-  "posts": [
-    {
-      "userId": 1,
-      "id": 1,
-      "title": "sunt aut facere repellat provident occaecati",
-      "body": "quia et suscipit suscipit recusandae consequuntur"
-    }
-  ],
-  "hasMore": true
-}
-```
-### Single Post – `/posts/{id}/view`
-```json
-{
-  "userId": 1,
-  "id": 1,
-  "title": "sunt aut facere repellat provident occaecati",
-  "body": "quia et suscipit suscipit recusandae consequuntur"
-}
-```
-### Users – `/users/fetch?page=1`
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-```json
-{
-  "users": [
-    {
-      "id": 1,
-      "name": "Leanne Graham",
-      "email": "leanne@example.com",
-      "company": { "name": "Romaguera-Crona" }
-    }
-  ],
-  "hasMore": true
-}
-```
+## Laravel Sponsors
 
-### Todos – `/todos/fetch?page=1`
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-```json
-{
-  "todos": [
-    {
-      "id": 1,
-      "title": "delectus aut autem",
-      "completed": false
-    }
-  ],
-  "hasMore": true
-}
-```
+### Premium Partners
 
-All data is fetched from:
+- **[Vehikl](https://vehikl.com)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
+- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
+- **[Redberry](https://redberry.international/laravel-development)**
+- **[Active Logic](https://activelogic.com)**
 
-```
-https://jsonplaceholder.typicode.com
-```
+## Contributing
 
-### Posts
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-| Method | Endpoint            | Description             |
-| ------ | ------------------- | ----------------------- |
-| GET    | /posts              | Posts dashboard         |
-| GET    | /posts/fetch?page=1 | Fetch posts (load more) |
-| GET    | /posts/{id}/view    | View single post        |
+## Code of Conduct
 
-**Example Response**
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-```json
-{
-  "posts": [{ "id": 1, "title": "...", "body": "..." }],
-  "hasMore": true
-}
-```
+## Security Vulnerabilities
 
-### Users
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-| Method | Endpoint            | Description             |
-| ------ | ------------------- | ----------------------- |
-| GET    | /users              | Users dashboard         |
-| GET    | /users/fetch?page=1 | Fetch users (load more) |
+## License
 
-### Todos
-
-| Method | Endpoint            | Description             |
-| ------ | ------------------- | ----------------------- |
-| GET    | /todos              | Todos dashboard         |
-| GET    | /todos/fetch?page=1 | Fetch todos (load more) |
-
----
-
-## 3. Architecture Overview
-
-```
-Browser (Blade + JS)
-   ↓ fetch()
-Laravel Controllers
-   ↓
-Service Layer
-   ↓
-JSONPlaceholder API
-```
-
-### Key Components
-
-* **Controllers**: Handle HTTP requests & responses
-* **Services**: Encapsulate API calls and caching logic
-* **Cache Layer**: Laravel Cache (file-based)
-* **Views**: Blade templates + + CSS + JavaScript
-
----
-
-## 4. Key Decisions & Trade-offs
-
-### Decisions
-
-* Used **service layer** for clean separation of concerns
-* Used **file cache** instead of database (assignment requirement)
-* Implemented **Load More** instead of pagination
-* Used **vanilla JS** instead of frontend frameworks
-
-### Trade-offs
-
-| Decision              | Trade-off                 |
-| --------------------- | ------------------------- |
-| No DB                 | Data not persistent       |
-| File cache            | Not shared across servers |
-| Client-side load more | More JS logic             |
-
----
-
-## 5. Known Limitations
-
-* External API is read-only (no real CRUD)
-* Cache clears on server restart
-* No authentication or authorization
-* No automated tests implemented
-
----
-
-## 6. Error Handling
-
-Handled scenarios:
-
-* Loading state (spinner + disabled button)
-* Empty state (no data message)
-* API failure (500 response + UI fallback)
-* Timeout / invalid API response
-
----
-
-## 7. Caching Strategy
-
-* All lists cached for **1 hour**
-* Individual items cached by ID
-* Logs indicate cache hit vs API fetch
----
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
